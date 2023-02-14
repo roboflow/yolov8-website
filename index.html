@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Thu Feb 09 2023 19:15:52 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Tue Feb 14 2023 09:40:30 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="63d0e3d080f1f23b6260874b" data-wf-site="5f6bc60e665f54545a1e52a5" lang="en">
 <head>
   <meta charset="utf-8">
@@ -178,17 +178,42 @@ hr {
         <p class="p--subtext">YOLOv8 was built by <a href="https://ultralytics.com">Ultralytics</a>. The code for YOLOv8 is <a href="https://github.com/ultralytics/ultralytics">open source</a> and licensed under a GPL license.<br></p>
         <h2 class="heading-6">Explore YOLOv8 Models</h2>
         <p class="p--subtext centered-content">Using Roboflow Universe, you can explore models trained to solve a vast range of problems, from identifying planes in aerial imagery to identifying forklifts and pallets in work areas.<br></p>
-        <div class="w-form">
-          <form id="email-form" name="email-form" data-name="Email Form" action="https://universe.roboflow.com/search?" method="get" class="form"><label for="q" class="field-label-copy">Search for a Model</label><input type="text" class="text-field w-input" maxlength="256" name="q" data-name="q" placeholder="Enter a query (i.e. forklifts, plants)" id="q"><input type="submit" value="Submit" data-wait="Please wait..." class="button w-button">
-            <h4 class="heading-6">Selected YOLOv8 Models</h4>
+        <div class="w-embed w-script">
+          <form action="https://universe.roboflow.com/search" method="GET">
+            <label for="q" class="field-label-copy">Search Roboflow Universe</label>
+            <input type="text" id="q" name="q" placeholder="Enter a search term (i.e. pallet, license plate, ship)">
+            <input type="submit" value="Find a Model" class="button">
           </form>
-          <div class="w-form-done">
-            <div>Thank you! Your submission has been received!</div>
-          </div>
-          <div class="w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
-          </div>
+          <script>
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const q = document.querySelector('#q').value;
+    window.location.href = `https://universe.roboflow.com/search?q=${q}%20model:yolov8`;
+  });
+</script>
+          <style>
+  form {
+    width: 100%;
+  }
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .button {
+  	border: none !important;
+    cursor: pointer;
+  }
+</style>
         </div>
+        <h4 class="heading-6">Selected YOLOv8 Models</h4>
         <div class="cards-grid-container">
           <a id="w-node-_0b97957d-b30a-6d95-2423-57f9336e15cb-6260874b" href="https://universe.roboflow.com/lewis-ly9ii/aerial-imagery-xbdqz/model/1" class="card-link-wrap w-inline-block">
             <div id="w-node-_0b97957d-b30a-6d95-2423-57f9336e15cc-6260874b" class="card-body">
@@ -237,18 +262,18 @@ hr {
               <div class="cards-image-mask"><img src="images/rf_blog_how2train_yolov8.jpg" sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 29vw, 240px" srcset="images/rf_blog_how2train_yolov8-p-500.jpg 500w, images/rf_blog_how2train_yolov8-p-800.jpg 800w, images/rf_blog_how2train_yolov8-p-1080.jpg 1080w, images/rf_blog_how2train_yolov8-p-1600.jpg 1600w, images/rf_blog_how2train_yolov8-p-2000.jpg 2000w, images/rf_blog_how2train_yolov8.jpg 2000w" alt="" class="cards-image blog"></div>
               <div class="card-text">
                 <h4 class="card-heading-2">How to Train YOLOv8 Guide</h4>
-                <div class="author">Roboflow</div>
+                <div class="author"><strong>Piotr Skalski</strong></div>
                 <p class="card-paragraph">In this guide, you&#x27;ll learn how to train a YOLOv8 model from scratch. You&#x27;ll work through gathering data, preparing a dataset, and training a model using your data.</p>
               </div>
             </div>
           </a>
-          <a id="w-node-ee1c842a-828c-ddab-61b0-55598cd21d57-6260874b" href="https://blog.roboflow.com/mountain-dew-contest-computer-vision/" class="card-link-wrap w-inline-block">
+          <a id="w-node-ee1c842a-828c-ddab-61b0-55598cd21d57-6260874b" href="https://blog.roboflow.com/yolov8-tracking-and-counting/" class="card-link-wrap w-inline-block">
             <div id="w-node-ee1c842a-828c-ddab-61b0-55598cd21d58-6260874b" class="card-body">
-              <div class="cards-image-mask"><img src="images/Screenshot-2023-01-25-at-08.43.17.png" sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 29vw, 240px" srcset="images/Screenshot-2023-01-25-at-08.43.17-p-500.png 500w, images/Screenshot-2023-01-25-at-08.43.17-p-800.png 800w, images/Screenshot-2023-01-25-at-08.43.17-p-1080.png 1080w, images/Screenshot-2023-01-25-at-08.43.17-p-1600.png 1600w, images/Screenshot-2023-01-25-at-08.43.17-p-2000.png 2000w, images/Screenshot-2023-01-25-at-08.43.17.png 2120w" alt="" class="cards-image blog"></div>
+              <div class="cards-image-mask"><img src="images/tracking-counting-yolov8-1.png" sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 29vw, 240px" srcset="images/tracking-counting-yolov8-1-p-500.png 500w, images/tracking-counting-yolov8-1-p-800.png 800w, images/tracking-counting-yolov8-1-p-1080.png 1080w, images/tracking-counting-yolov8-1-p-1600.png 1600w, images/tracking-counting-yolov8-1-p-2000.png 2000w, images/tracking-counting-yolov8-1.png 2000w" alt="" class="cards-image blog"></div>
               <div class="card-text">
-                <h4 class="card-heading-2">Awesome YOLOv8</h4>
-                <div class="author"><strong>Mohamed Traore</strong></div>
-                <p class="card-paragraph">A curated list of YOLOv8 models with accompanying datasets. You can use this list as inspiration for your next project.</p>
+                <h4 class="card-heading-2">Track and Count Objects Using YOLOv8</h4>
+                <div class="author"><strong>Piotr Skalski</strong></div>
+                <p class="card-paragraph">This guide discusses how to track and count objects using YOLOv8, ByteTrack, and Supervision.</p>
               </div>
             </div>
           </a>
